@@ -28,9 +28,7 @@ public class Login extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.appbar_layout);
 
         SetupParseUser();
-        init();
-
-
+        
         ParseAnalytics.trackAppOpenedInBackground(getIntent());
     }
 
@@ -110,6 +108,13 @@ public class Login extends AppCompatActivity {
     }
 
     private  void SetupParseUser(){
+
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if(currentUser != null){
+            Intent intent = new Intent(Login.this, Home.class);
+            startActivity(intent);
+            finish();
+        }else init();
 
     }
 

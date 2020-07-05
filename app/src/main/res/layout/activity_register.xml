@@ -91,6 +91,33 @@
             android:padding="12dp"
             android:background="@drawable/white_rounded_button"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="left"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account?"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/txtLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Login."
+                android:textColor="#a41a89"
+                android:textAllCaps="false"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

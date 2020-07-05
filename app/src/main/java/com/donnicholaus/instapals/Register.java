@@ -25,6 +25,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        Button loginToRegister = findViewById(R.id.txtLogin);
         Button register = findViewById(R.id.btn_register);
         final EditText emailTxt = findViewById(R.id.input_email);
         final EditText usernameTxt = findViewById(R.id.input_username);
@@ -65,6 +66,15 @@ public class Register extends AppCompatActivity {
                         }
                     });
                 }
+            }
+        });
+
+        loginToRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Register.this, Login.class);
+                startActivity(intent);
+                finish();
             }
         });
 
