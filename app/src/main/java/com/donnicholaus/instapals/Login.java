@@ -25,7 +25,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.appbar_layout);
+        getSupportActionBar().setCustomView(R.layout.appbar_login);
 
         SetupParseUser();
 
@@ -44,6 +44,7 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
         //Initialize the login button, And all Other fields
         Button loginBtn = findViewById(R.id.btnLogin);

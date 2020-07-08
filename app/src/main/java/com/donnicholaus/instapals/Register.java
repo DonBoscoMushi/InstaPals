@@ -1,6 +1,7 @@
 package com.donnicholaus.instapals;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -78,6 +79,24 @@ public class Register extends AppCompatActivity {
             }
         });
 
+    }
 
+    private class MyTask extends AsyncTask<String, Void, Boolean>{
+
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            return null;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+        }
     }
 }
