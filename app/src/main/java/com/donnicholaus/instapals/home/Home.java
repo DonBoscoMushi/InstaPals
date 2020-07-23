@@ -41,12 +41,14 @@ public class Home extends AppCompatActivity {
 
         ImageButton icon_profile = findViewById(R.id.icon_profile);
         ImageButton icon_message = findViewById(R.id.action_message);
-        TextView appName = findViewById(R.id.appBatTitleText);
+        TextView username = findViewById(R.id.usernameTxt);
+
+        username.setText(ParseUser.getCurrentUser().getUsername());
 
         icon_message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Inafanya kazi", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Its Working", Toast.LENGTH_SHORT).show();
             }
         });
 

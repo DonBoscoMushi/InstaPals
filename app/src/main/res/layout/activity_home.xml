@@ -30,10 +30,9 @@
             android:src="@drawable/img2" />
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="24dp"
             android:layout_below="@id/image"
             android:orientation="horizontal"
-            android:background="@drawable/nav_border"
             android:padding="2dp">
 
             <ImageView

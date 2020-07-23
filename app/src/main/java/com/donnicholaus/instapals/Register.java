@@ -57,10 +57,11 @@ public class Register extends AppCompatActivity {
                             if (e == null){
                                 Toast.makeText(getApplicationContext(), "Sign up Successful.", Toast.LENGTH_SHORT).show();
                                 Toast.makeText(getApplicationContext(), "Login to Continue.", Toast.LENGTH_SHORT).show();
-
+                                ParseUser.logOut();
                                 Intent intent = new Intent(Register.this, Login.class);
                                 startActivity(intent);
                                 finish();
+
                             }else {
                                 Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
