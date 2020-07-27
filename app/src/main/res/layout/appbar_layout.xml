@@ -5,7 +5,6 @@
     app:contentInsetStart="0dp"
     app:contentInsetEnd="0dp"
     android:background="@color/colorPrimary"
-    app:popupTheme="@style/AppTheme.PopupOverlay"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 

@@ -1,6 +1,5 @@
 package com.donnicholaus.instapals;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,15 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.donnicholaus.instapals.home.Home;
-import com.parse.LogInCallback;
+import com.donnicholaus.instapals.home.HomeActivity;
 import com.parse.ParseAnalytics;
-import com.parse.ParseException;
 import com.parse.ParseUser;
-
-import java.util.Objects;
 
 public class Login extends AppCompatActivity {
 
@@ -24,9 +18,6 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.appbar_login);
-
         SetupParseUser();
 
         ParseAnalytics.trackAppOpenedInBackground(getIntent());
@@ -55,52 +46,55 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                final String username = usernameTxt.getText().toString();
-                final String password = passwordTxt.getText().toString();
+//                final String username = usernameTxt.getText().toString();
+//                final String password = passwordTxt.getText().toString();
+//
+//                if(username.equals("") || password.equals("")){
+//                    Toast.makeText(getApplicationContext(),"Username and Password Required", Toast.LENGTH_SHORT).show();
+//                }else {
+//
+//                    /**
+//                     *If The User Used Email intead of usernmane use rthis code here
+//                     * // If the entered username has an @, assume it is an email
+//                     * String username = "bob@example.com";
+//                     *
+//                     * if (username.indexOf("@")) {
+//                     *   ParseQuery<ParseUser> query = ParseUser.getQuery();
+//                     *   query.whereEqualTo("email", username);
+//                     *   query.getFirstInBackground(new GetCallback<ParseObject>() {
+//                     *       public void done(ParseObject object, ParseException e) {
+//                     *           if (object == null) {
+//                     *               Log.d("score", "The getFirst request failed.");
+//                     *           } else {
+//                     *                String actualUsername = object.get("username");
+//                     *                ParseUser.logInInBackground(actualusername, "showmethemoney", new LogInCallback() {
+//                     *                  ...
+//                     *                });
+//                     *           }
+//                     *       }
+//                     *    });
+//                     *
+//                     */
+//
+//
+//                    ParseUser.logInInBackground(username, password, new LogInCallback() {
+//                        @Override
+//                        public void done(ParseUser user, ParseException e) {
+//                            if (user != null){
+//                                Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+//                                Intent intent = new Intent(Login.this, HomeActivity.class);
+//                                startActivity(intent);
+//                                finish();
+//                            }else {
+//                                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+//                            }
+//                        }
+//                    });
+//
+//                }
 
-                if(username.equals("") || password.equals("")){
-                    Toast.makeText(getApplicationContext(),"Username and Password Required", Toast.LENGTH_SHORT).show();
-                }else {
-
-                    /**
-                     *If The User Used Email intead of usernmane use rthis code here
-                     * // If the entered username has an @, assume it is an email
-                     * String username = "bob@example.com";
-                     *
-                     * if (username.indexOf("@")) {
-                     *   ParseQuery<ParseUser> query = ParseUser.getQuery();
-                     *   query.whereEqualTo("email", username);
-                     *   query.getFirstInBackground(new GetCallback<ParseObject>() {
-                     *       public void done(ParseObject object, ParseException e) {
-                     *           if (object == null) {
-                     *               Log.d("score", "The getFirst request failed.");
-                     *           } else {
-                     *                String actualUsername = object.get("username");
-                     *                ParseUser.logInInBackground(actualusername, "showmethemoney", new LogInCallback() {
-                     *                  ...
-                     *                });
-                     *           }
-                     *       }
-                     *    });
-                     *
-                     */
-
-
-                    ParseUser.logInInBackground(username, password, new LogInCallback() {
-                        @Override
-                        public void done(ParseUser user, ParseException e) {
-                            if (user != null){
-                                Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(Login.this, Home.class);
-                                startActivity(intent);
-                                finish();
-                            }else {
-                                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-
-                }
+                Intent intent = new Intent(Login.this, HomeActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -111,7 +105,7 @@ public class Login extends AppCompatActivity {
 
         ParseUser currentUser = ParseUser.getCurrentUser();
         if(currentUser != null){
-            Intent intent = new Intent(Login.this, Home.class);
+            Intent intent = new Intent(Login.this, HomeActivity.class);
             startActivity(intent);
             finish();
         }else init();
@@ -157,7 +151,7 @@ public class Login extends AppCompatActivity {
 //import android.widget.FrameLayout;
 //import android.widget.Toast;
 //
-//import com.donnicholaus.instapals.home.Home;
+//import com.donnicholaus.instapals.home.HomeActivity;
 //import com.parse.LogInCallback;
 //import com.parse.ParseAnalytics;
 //import com.parse.ParseException;
@@ -233,7 +227,7 @@ public class Login extends AppCompatActivity {
 //
 //        ParseUser currentUser = ParseUser.getCurrentUser();
 //        if(currentUser != null){
-//            Intent intent = new Intent(Login.this, Home.class);
+//            Intent intent = new Intent(Login.this, HomeActivity.class);
 //            startActivity(intent);
 //            finish();
 //        }else init();
@@ -304,7 +298,7 @@ public class Login extends AppCompatActivity {
 //                Toast.makeText(getApplicationContext(),error, Toast.LENGTH_SHORT).show();
 //            }else{
 //                Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(Login.this, Home.class);
+//                Intent intent = new Intent(Login.this, HomeActivity.class);
 //                startActivity(intent);
 //                finish();
 //            }

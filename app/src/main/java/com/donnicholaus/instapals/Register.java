@@ -82,22 +82,22 @@ public class Register extends AppCompatActivity {
 
     }
 
-    private class MyTask extends AsyncTask<String, Void, Boolean>{
-
-
-        @Override
-        protected Boolean doInBackground(String... strings) {
-            return null;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
-        }
-    }
+//    private class MyTask extends AsyncTask<String, Void, Boolean>{
+//
+//
+//        @Override
+//        protected Boolean doInBackground(String... strings) {
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Boolean aBoolean) {
+//            super.onPostExecute(aBoolean);
+//        }
+//    }
 }
