@@ -82,7 +82,7 @@ public class HomeActivity extends AppCompatActivity {
 
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_camera);
         tabLayout.getTabAt(1).setText(R.string.app_name);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_send);
+        tabLayout.getTabAt( 2).setIcon(R.drawable.ic_send);
     }
 
 }
