@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/profileImg"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:src="@drawable/insta_pals_logo"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/circle_img"/>
+
+        <TextView
+            android:layout_marginTop="2dp"
+            android:id="@+id/textName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Don Nicholaus"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:gravity="center"
+            android:layout_below="@+id/profileImg"/>
+
+        <TextView
+            android:id="@+id/txtUsername"
+            android:layout_marginTop="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#don"
+            android:textSize="17sp"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:layout_below="@+id/textName"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
