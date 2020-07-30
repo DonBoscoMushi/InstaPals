@@ -14,8 +14,7 @@
             <include layout="@layout/top_profile_bar"/>
 
         </RelativeLayout>
-
-
+        
         <RelativeLayout
             android:id="@+id/profileRlayout2"
             android:layout_marginTop="20sp"
