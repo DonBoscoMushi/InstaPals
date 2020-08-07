@@ -1,12 +1,14 @@
 package com.donnicholaus.instapals;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import com.donnicholaus.instapals.home.HomeActivity;
 import com.parse.ParseAnalytics;
@@ -41,6 +43,21 @@ public class Login extends AppCompatActivity {
         Button loginBtn = findViewById(R.id.btnLogin);
         final EditText usernameTxt = findViewById(R.id.edtEmail);
         final EditText passwordTxt = findViewById(R.id.edtPassword);
+
+
+//        final ProgressBar progressBar = findViewById(R.id.progressBar);
+//        final CardView cardView = findViewById(R.id.cardview_layout);
+//        final ProgressButton progressButton = new ProgressButton(Login.this, progressBar);
+//
+//        cardView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                progressButton.buttonActivated();
+//
+//                progressButton.buttonDeactivated();
+//            }
+//        });
+
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

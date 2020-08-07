@@ -12,15 +12,14 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:elevation="12dp"
-            android:id="@+id/profileImg"
+            android:id="@+id/img_circle"
             android:layout_centerHorizontal="true"
             app:cardCornerRadius="75dp">
 
             <ImageView
-                android:id="@+id/img_circle"
+                android:id="@+id/profileImg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/img_mama"
                 android:scaleType="centerCrop"
                 android:background="@drawable/circle_img"/>
         </androidx.cardview.widget.CardView>
@@ -34,7 +33,7 @@
             android:textSize="20sp"
             android:textColor="#000"
             android:gravity="center"
-            android:layout_below="@+id/profileImg"/>
+            android:layout_below="@+id/img_circle"/>
 
         <TextView
             android:id="@+id/txtUsername"

@@ -3,6 +3,9 @@ package com.donnicholaus.instapals.profile;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
@@ -11,16 +14,28 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.donnicholaus.instapals.R;
 import com.donnicholaus.instapals.util.BottomNavHelper;
+import com.donnicholaus.instapals.util.UniversalImageLoader;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class ProfileActivity extends AppCompatActivity {
+
+    private ImageView imageView;
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        progressBar = findViewById(R.id.progressDialog);
+        progressBar.setVisibility(View.GONE);
+        imageView = findViewById(R.id.profileImg);
+
+        initImageLoader();
         setupBottomNav();
         setupToolBar();
+        setProfileImage();
     }
 
     private void setupToolBar(){
@@ -57,5 +72,15 @@ public class ProfileActivity extends AppCompatActivity {
         menuItem.setChecked(true);
     }
 
+    private void initImageLoader(){
+        UniversalImageLoader universalImageLoader = new UniversalImageLoader(ProfileActivity.this);
+        ImageLoader.getInstance().init(universalImageLoader.getConfig());
+    }
+
+
+    private void setProfileImage(){
+            String imgURL = "homepages.cae.wisc.edu/~ece533/images/arctichare.png";
+            UniversalImageLoader.setImage(imgURL, imageView, progressBar, "https://");
+    }
 
 }

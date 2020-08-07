@@ -25,6 +25,14 @@
             <include layout="@layout/profile_top_bar"/>
         </RelativeLayout>
 
+        <ProgressBar
+            android:id="@+id/progressDialog"
+            android:layout_width="120dp"
+            android:visibility="gone"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"/>
+
         <include layout="@layout/layout_bottom_nav"/>
 
     </RelativeLayout>
