@@ -1,4 +1,4 @@
-package com.donnicholaus.instapals.share;
+package com.donnicholaus.unipals.search;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -6,11 +6,11 @@ import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.donnicholaus.instapals.R;
-import com.donnicholaus.instapals.util.BottomNavHelper;
+import com.donnicholaus.unipals.R;
+import com.donnicholaus.unipals.util.BottomNavHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ShareActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,10 +21,10 @@ public class ShareActivity extends AppCompatActivity {
 
     public void setupBottomNav(){
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNav);
-        BottomNavHelper.enableNavigation(ShareActivity.this, bottomNavigationView);
+        BottomNavHelper.enableNavigation(SearchActivity.this, bottomNavigationView);
 
         Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(2);
+        MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
     }
 }

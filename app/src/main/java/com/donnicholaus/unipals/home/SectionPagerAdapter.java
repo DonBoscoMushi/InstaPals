@@ -1,4 +1,4 @@
-package com.donnicholaus.instapals.home;
+package com.donnicholaus.unipals.home;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

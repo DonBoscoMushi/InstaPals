@@ -1,4 +1,4 @@
-package com.donnicholaus.instapals.home;
+package com.donnicholaus.unipals.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,14 +9,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.donnicholaus.instapals.R;
+import com.donnicholaus.unipals.R;
 
-public class MessageFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_message, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         return  view;
     }

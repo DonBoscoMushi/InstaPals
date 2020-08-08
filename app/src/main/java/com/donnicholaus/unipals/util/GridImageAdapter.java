@@ -1,4 +1,4 @@
-package com.donnicholaus.instapals.util;
+package com.donnicholaus.unipals.util;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -6,13 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.donnicholaus.instapals.R;
+import com.donnicholaus.unipals.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
@@ -38,7 +37,7 @@ public class GridImageAdapter extends ArrayAdapter{
 
     private static class ViewHolder{
 
-        ImageView image;
+        SquareImageView image;
         ProgressBar progressBar;
     }
 

@@ -1,4 +1,4 @@
-package com.donnicholaus.instapals.util;
+package com.donnicholaus.unipals.util;
 
 import android.content.Context;
 

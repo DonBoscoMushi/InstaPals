@@ -1,4 +1,4 @@
-package com.donnicholaus.instapals.util;
+package com.donnicholaus.unipals.util;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,11 +6,11 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 
-import com.donnicholaus.instapals.R;
-import com.donnicholaus.instapals.home.HomeActivity;
-import com.donnicholaus.instapals.profile.ProfileActivity;
-import com.donnicholaus.instapals.search.SearchActivity;
-import com.donnicholaus.instapals.share.ShareActivity;
+import com.donnicholaus.unipals.R;
+import com.donnicholaus.unipals.home.HomeActivity;
+import com.donnicholaus.unipals.profile.ProfileActivity;
+import com.donnicholaus.unipals.search.SearchActivity;
+import com.donnicholaus.unipals.share.ShareActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BottomNavHelper {

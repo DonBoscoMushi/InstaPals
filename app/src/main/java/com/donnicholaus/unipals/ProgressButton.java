@@ -1,4 +1,4 @@
-package com.donnicholaus.instapals;
+package com.donnicholaus.unipals;
 
 import android.content.Context;
 import android.view.View;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.donnicholaus.unipals.R;
 
 public class ProgressButton {
 

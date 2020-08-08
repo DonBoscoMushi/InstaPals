@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1095177950954",
+    "firebase_url": "https://unipals-2211.firebaseio.com",
+    "project_id": "unipals-2211",
+    "storage_bucket": "unipals-2211.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095177950954:android:e9cf9ddece40249da22993",
+        "android_client_info": {
+          "package_name": "com.donnicholaus.unipals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095177950954-ae13e5us5keoflbglfgtsv4qutalg3ma.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.donnicholaus.unipals",
+            "certificate_hash": "826759bcf4fd1b6ad3ee259e664626261e4e3e87"
+          }
+        },
+        {
+          "client_id": "1095177950954-8c89glffn2gi2of4fe67kk9govhaueqm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuwYUd9CTzsTSaSHpZUK0B4wy0bg3M59M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095177950954-8c89glffn2gi2of4fe67kk9govhaueqm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

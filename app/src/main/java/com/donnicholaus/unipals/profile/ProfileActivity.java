@@ -1,4 +1,4 @@
-package com.donnicholaus.instapals.profile;
+package com.donnicholaus.unipals.profile;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,10 +14,10 @@ import androidx.appcompat.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.donnicholaus.instapals.R;
-import com.donnicholaus.instapals.util.BottomNavHelper;
-import com.donnicholaus.instapals.util.GridImageAdapter;
-import com.donnicholaus.instapals.util.UniversalImageLoader;
+import com.donnicholaus.unipals.R;
+import com.donnicholaus.unipals.util.BottomNavHelper;
+import com.donnicholaus.unipals.util.GridImageAdapter;
+import com.donnicholaus.unipals.util.UniversalImageLoader;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -87,13 +87,18 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     private void setProfileImage(){
-            String imgURL = "homepages.cae.wisc.edu/~ece533/images/arctichare.png";
-            UniversalImageLoader.setImage(imgURL, imageView, progressBar, "https://");
+            String imgURL = "https://homepages.cae.wisc.edu/~ece533/images/baboon.png";
+            UniversalImageLoader.setImage(imgURL, imageView, progressBar, "");
     }
 
 
     private void setImageGrid(ArrayList<String> imgURLs){
         GridView gridView = findViewById(R.id.gridView);
+
+        int gridWidth = getResources().getDisplayMetrics().widthPixels;
+        int imgWidth = gridWidth / 3;
+        gridView.setColumnWidth(imgWidth);
+
         GridImageAdapter gridImageAdapter = new GridImageAdapter(mContext, R.layout.layout_grid_imageview, "", imgURLs);
         gridView.setAdapter(gridImageAdapter);
     }

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
+        android:background="#fef7f0"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <RelativeLayout
+            android:background="#fef7f0"
             android:id="@+id/profileRlayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -16,6 +19,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:background="#fef7f0"
             android:id="@+id/profileRlayout2"
             android:layout_marginTop="20sp"
             android:layout_below="@id/profileRlayout1"
@@ -25,6 +29,26 @@
             <include layout="@layout/profile_top_section"/>
         </RelativeLayout>
 
+        <RelativeLayout
+            android:background="@drawable/top_and_bottom_div"
+            android:id="@+id/profileRlayout3"
+            android:layout_marginTop="2sp"
+            android:layout_below="@id/profileRlayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/snippet_top_profile"/>
+        </RelativeLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:id="@+id/animatedDialog"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="7314-loading.json"
+            app:lottie_loop="true" />
         <ProgressBar
             android:id="@+id/progressDialog"
             android:layout_width="120dp"
@@ -36,8 +60,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/profileRlayout2"
-            android:layout_marginTop="10dp">
+            android:layout_below="@id/profileRlayout3">
             <GridView
                 android:id="@+id/gridView"
                 android:gravity="center"
@@ -46,8 +69,7 @@
                 android:numColumns="3"
                 android:stretchMode="columnWidth"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content"/>
 
         </RelativeLayout>
 

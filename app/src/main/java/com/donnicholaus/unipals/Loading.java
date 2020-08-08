@@ -1,4 +1,4 @@
-package com.donnicholaus.instapals;
+package com.donnicholaus.unipals;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
+
+import com.donnicholaus.unipals.R;
 
 import java.util.concurrent.TimeUnit;
 

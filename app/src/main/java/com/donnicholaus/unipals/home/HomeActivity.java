@@ -1,18 +1,27 @@
-package com.donnicholaus.instapals.home;
+package com.donnicholaus.unipals.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
-import com.donnicholaus.instapals.R;
-import com.donnicholaus.instapals.util.BottomNavHelper;
+import com.donnicholaus.unipals.Login;
+import com.donnicholaus.unipals.R;
+import com.donnicholaus.unipals.util.BottomNavHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,39 +30,30 @@ public class HomeActivity extends AppCompatActivity {
 
         setupBottomNav();
         setupViewPager();
-//        Button logoutBtn = findViewById(R.id.btnLogout);
-//        logoutBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ParseUser.logOut();
-//                Intent intent = new Intent(HomeActivity.this, Login.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
-//
-//        ImageButton icon_profile = findViewById(R.id.icon_profile);
-//        ImageButton icon_message = findViewById(R.id.action_message);
-//        TextView username = findViewById(R.id.usernameTxt);
-//
-//        username.setText(ParseUser.getCurrentUser().getUsername());
-//
-//        icon_message.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(getApplicationContext(), "Its Working", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//        icon_profile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "You are really a man", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+
+        mAuth = FirebaseAuth.getInstance();
 
     }
+
+    // ************************** Firebase Code ***********************************
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
+
+    //Change UI according to user data.
+    public void  updateUI(FirebaseUser account){
+        if(account == null) {
+            startActivity(new Intent(this, Login.class));
+        }
+    }
+
+
+
 
     public void setupBottomNav(){
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNav);
