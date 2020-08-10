@@ -9,22 +9,34 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.donnicholaus.unipals.Login;
+import com.donnicholaus.unipals.R;
 import com.donnicholaus.unipals.Register;
+import com.donnicholaus.unipals.models.User;
+import com.donnicholaus.unipals.models.UserAccountSettings;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseAppLifecycleListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseMethods {
 
     private FirebaseAuth mAuth;
+    private FirebaseDatabase mFirebaseDatabase;
+    private DatabaseReference mRef;
+
     private String userID;
     private Context mContext;
 
     public FirebaseMethods(Context context) {
+
         mAuth = FirebaseAuth.getInstance();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mRef = mFirebaseDatabase.getReference();
         mContext = context;
 
         if(mAuth.getCurrentUser() != null){
@@ -60,6 +72,40 @@ public class FirebaseMethods {
                         // ...
                     }
                 });
+    }
+
+    public boolean checkUsername(String username, DataSnapshot dataSnapshot){
+
+        User user = new User();
+
+        for(DataSnapshot ds: dataSnapshot.child(userID).getChildren()){
+
+            //Fetch username from database and assign it to user usernme
+
+            user.setUsername(ds.getValue(User.class).getUsername());
+
+            if(user.getUsername().equals(username)){
+                //Username kama iyo ipo tayar
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    public void addNewUser(String email, long phone_no, String username, String fullname,
+                           String description, String profile_photo){
+
+        User user = new User(userID, username, fullname, phone_no, email);
+        mRef.child(mContext.getString(R.string.db_user))
+                .child(userID)
+                .setValue(user);
+
+        UserAccountSettings details = new UserAccountSettings(description, fullname, profile_photo,
+                0, 0, 0, username);
+        mRef.child(mContext.getString(R.string.db_user_account_settings))
+                .child(userID)
+                .setValue(details);
     }
 
 

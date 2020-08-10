@@ -16,4 +16,6 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="username">Don</string>
+    <string name="db_user">users</string>
+    <string name="db_user_account_settings">user_account_settings</string>
 </resources>

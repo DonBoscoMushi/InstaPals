@@ -25,6 +25,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Register extends AppCompatActivity {
 
+    private EditText emailTxt, passwordTxt, fullnameTxt, usernameTxt;
+    private Button loginToRegister, register;
+    private String fullname, password, username, email;
+
     private FirebaseAuth mAuth;
     private FirebaseMethods firebaseMethods;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -47,24 +51,22 @@ public class Register extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        Button loginToRegister = findViewById(R.id.txtLogin);
-        Button register = findViewById(R.id.btn_register);
-        final EditText emailTxt = findViewById(R.id.input_email);
-        final EditText usernameTxt = findViewById(R.id.input_username);
-        final EditText fullnameTxt = findViewById(R.id.input_fullname);
-        final EditText passwordTxt = findViewById(R.id.input_password);
+        loginToRegister = findViewById(R.id.txtLogin);
+        register = findViewById(R.id.btn_register);
+        emailTxt = findViewById(R.id.input_email);
+        usernameTxt = findViewById(R.id.input_username);
+        fullnameTxt = findViewById(R.id.input_fullname);
+        passwordTxt = findViewById(R.id.input_password);
 
         firebaseSetup();
-
-
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = emailTxt.getText().toString();
-                String username = usernameTxt.getText().toString();
-                String fullname = fullnameTxt.getText().toString();
-                String password = passwordTxt.getText().toString();
+                email = emailTxt.getText().toString();
+                username = usernameTxt.getText().toString();
+                fullname = fullnameTxt.getText().toString();
+                password = passwordTxt.getText().toString();
 
                 if(email.equals("") || username.equals("") || fullname.equals("") || password.equals("")){
                     Toast.makeText(getApplicationContext(), "All Fields are required", Toast.LENGTH_SHORT).show();
@@ -100,7 +102,7 @@ public class Register extends AppCompatActivity {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser firebaseUser =     firebaseAuth.getCurrentUser();
+                FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
                 if (firebaseUser != null){
                     //User found
@@ -110,7 +112,16 @@ public class Register extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                             //Check username if exists
-
+                            if(firebaseMethods.checkUsername(username, dataSnapshot)){
+                                Toast.makeText(Register.this, "Username Exists",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                firebaseMethods.addNewUser(email, 0, username, fullname,
+                                        "", "");
+                                Toast.makeText(Register.this, "Register Successiful. " +
+                                        "Check email for verification", Toast.LENGTH_SHORT).show();
+                            }
 
                         }
 
